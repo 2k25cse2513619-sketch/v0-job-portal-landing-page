@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
 import { UploadCard3D } from "./upload-card-3d"
+import { GlowText, GlowHeading } from "./glow-text"
 
 export function HeroSection() {
 
@@ -29,26 +30,14 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-foreground"
-              style={{
-                textShadow: "0 0 40px oklch(0.6 0.22 250 / 0.3)",
-              }}
-            >
+            <GlowHeading>
               <span className="text-balance">
-                Speak the{" "}
-                <span
-                  className="text-primary"
-                  style={{
-                    textShadow:
-                      "0 0 20px oklch(0.6 0.22 250 / 0.5), 0 0 40px oklch(0.6 0.22 250 / 0.3)",
-                  }}
-                >
-                  Recruiter&apos;s
-                </span>{" "}
-                Language.
+                <GlowText>Speak</GlowText>{" "}
+                <GlowText>the</GlowText>{" "}
+                <GlowText className="text-primary">Recruiter&apos;s</GlowText>{" "}
+                <GlowText>Language.</GlowText>
               </span>
-            </h1>
+            </GlowHeading>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed text-pretty">
               Our AI-powered analyzer translates your unique experience into the
