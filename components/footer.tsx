@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -14,23 +14,27 @@ export function Footer() {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row items-center justify-between gap-6"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-              <Briefcase
-                className="w-5 h-5 text-primary"
+          <div className="flex items-center gap-2">
+            <Image
+              src="/images/logo.jpeg"
+              alt="Job Portal Logo"
+              width={48}
+              height={48}
+              className="rounded-lg"
+            />
+            <div className="flex flex-col">
+              <span
+                className="text-xl font-bold text-foreground leading-tight"
                 style={{
-                  filter: "drop-shadow(0 0 4px oklch(0.6 0.22 250 / 0.4))",
+                  textShadow: "0 0 20px oklch(0.6 0.22 250 / 0.2)",
                 }}
-              />
+              >
+                Job Portal
+              </span>
+              <span className="text-xs text-muted-foreground leading-tight">
+                Your Journey. Your Future.
+              </span>
             </div>
-            <span
-              className="text-xl font-bold text-foreground"
-              style={{
-                textShadow: "0 0 20px oklch(0.6 0.22 250 / 0.2)",
-              }}
-            >
-              Job Portal
-            </span>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
