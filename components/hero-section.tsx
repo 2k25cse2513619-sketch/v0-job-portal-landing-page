@@ -40,7 +40,7 @@ export function HeroSection() {
             </GlowHeading>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed text-pretty">
-              Our AI-powered analyzer translates your unique experience into the
+              Job Portal translates your unique experience into the
               specific technical signals recruiters are looking for. Don&apos;t
               just apply—get recognized.
             </p>

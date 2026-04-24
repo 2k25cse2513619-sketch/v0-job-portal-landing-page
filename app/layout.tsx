@@ -8,7 +8,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Job Portal | Speak the Recruiter\'s Language',
-  description: 'Our AI-powered analyzer translates your unique experience into the specific technical signals recruiters are looking for.',
+  description: 'Job Portal translates your unique experience into the specific technical signals recruiters are looking for. Find your dream job today.',
   generator: 'v0.app',
   icons: {
     icon: [
