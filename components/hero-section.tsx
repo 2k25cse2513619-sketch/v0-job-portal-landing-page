@@ -1,11 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Upload, FileText, Sparkles } from "lucide-react"
-import { useState } from "react"
+import { Sparkles } from "lucide-react"
+import { UploadCard3D } from "./upload-card-3d"
 
 export function HeroSection() {
-  const [isDragging, setIsDragging] = useState(false)
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
@@ -97,78 +96,18 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Upload Zone */}
+        {/* Right Content - 3D Upload Card */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="relative"
         >
-          <div
-            className={`relative backdrop-blur-xl bg-card/60 rounded-3xl border transition-all duration-500 p-8 md:p-12 ${
-              isDragging
-                ? "border-primary shadow-2xl shadow-primary/30 scale-[1.02]"
-                : "border-border/50 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
-            }`}
-            onDragEnter={() => setIsDragging(true)}
-            onDragLeave={() => setIsDragging(false)}
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={() => setIsDragging(false)}
-          >
-            {/* Glass effect overlay */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
-
-            <div className="relative space-y-6 text-center">
-              <motion.div
-                animate={{
-                  y: [0, -8, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="mx-auto w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center"
-              >
-                <Upload
-                  className="w-10 h-10 text-primary"
-                  style={{
-                    filter: "drop-shadow(0 0 8px oklch(0.6 0.22 250 / 0.5))",
-                  }}
-                />
-              </motion.div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-foreground">
-                  Upload Your Resume
-                </h3>
-                <p className="text-muted-foreground">
-                  Drag & drop your PDF here or click to browse
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4" />
-                  <span>PDF, DOC, DOCX</span>
-                </div>
-                <span>•</span>
-                <span>Max 10MB</span>
-              </div>
-
-              <button className="w-full py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20">
-                Choose File
-              </button>
-
-              <p className="text-xs text-muted-foreground">
-                Your data is encrypted and secure
-              </p>
-            </div>
-          </div>
+          <UploadCard3D />
 
           {/* Decorative elements */}
-          <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl" />
+          <div className="absolute -top-8 -right-8 w-32 h-32 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-accent/20 rounded-full blur-3xl pointer-events-none" />
         </motion.div>
       </div>
     </section>
